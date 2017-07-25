@@ -45,7 +45,7 @@ public class BenchResource {
     }
 
     /**
-     * POST  /employees : Create a new employee.
+     * POST  /bench/employees : Create a new employee.
      *
      * @param upsaId the employee upsaId to create
      * @return the ResponseEntity with status 201 (Created) and with body the new employee, or with status 400 (Bad Request) if the employee has already an ID
@@ -105,9 +105,9 @@ public class BenchResource {
     }
 
     /**
-     * GET  /employees/:id : get the "id" employee.
+     * GET  /employees/:upsaId : get the "id" employee.
      *
-     * @param id the id of the employee to retrieve
+     * @param upsaId the id of the employee to retrieve
      * @return the ResponseEntity with status 200 (OK) and with body the employee, or with status 404 (Not Found)
      */
     @GetMapping("/bench/employees/{upsaId}")
@@ -119,7 +119,7 @@ public class BenchResource {
     }
 
     /**
-     * DELETE  /employees/:upsaId : delete the "upsaId" employee from bench.
+     * DELETE  /bench/employees/:upsaId : delete the "upsaId" employee from bench.
      *
      * @param upsaId the id of the employee to delete from bench
      * @return the ResponseEntity with status 200 (OK)
@@ -133,14 +133,14 @@ public class BenchResource {
     }
 
     /**
-     * SEARCH  /_search/employees?query=:query : search for the employee corresponding
+     * SEARCH  /_search/bench/employees?query=:query : search for the employee corresponding
      * to the query.
      *
      * @param query the query of the employee search
      * @param pageable the pagination information
      * @return the result of the search
      */
-    @GetMapping("/_search/employees")
+    @GetMapping("/_search/bench/employees")
     @Timed
     public ResponseEntity<List<EmployeeDto>> searchEmployees(@RequestParam String query, @ApiParam Pageable pageable) {
         log.debug("REST request to search for a page of Employees for query {}", query);
