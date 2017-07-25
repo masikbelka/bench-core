@@ -1,0 +1,109 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "type",
+            "otherEntityName": "opportunityType",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "opportunity"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "assignedPositions",
+            "otherEntityName": "opportunityPosition",
+            "otherEntityRelationshipName": "opportunity"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "location",
+            "otherEntityName": "location",
+            "otherEntityRelationshipName": "opportunity"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "staffingId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ownerUpsaId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ownerFullName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "OpportunityStatus",
+            "fieldValues": "CREATED,CLOSED,ACTIVE,ON_HOLD,CANCELLED,IN_PROGRESS,APPROVED,OPEN,DRAFT,SUBMITTED,REJECTED"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1000
+        },
+        {
+            "fieldName": "staffingCoordinatiorUpsaId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "staffingCoordinatiorFullName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "responsibleManagerUpsaId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "responsibleManagerFullName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "supervisorUpsaId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "supervisorFullName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deliveryManagerUpsaId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deliveryManagerFullName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "accountManagerUpsaId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "accountManagerFullName",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170723144206",
+    "entityTableName": "opportunity",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl"
+}

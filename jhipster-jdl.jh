@@ -1,0 +1,225 @@
+entity BenchHistory{
+	createdTime ZonedDateTime required,
+	bench Boolean required,
+    managerId String,
+    validTo ZonedDateTime,
+    createdByUpsaId String, 
+    changedByUpsaId String
+}
+entity BenchCommentHistory{
+	changeTime ZonedDateTime required,
+    oldValue String,
+    newValue String
+}
+entity BenchPredictions{
+	createdTime ZonedDateTime required,
+    ignored Boolean required,
+    ignoredDays Boolean,
+    readyToBench Boolean required,
+    readyToProduction Boolean required
+}
+entity PredictionDetails{
+	date LocalDate,
+    assignedToProject Boolean required,
+    /**Employeed or not*/
+    active Boolean required,
+    removedFromProject Boolean required,
+    maternityLeave Boolean required
+}
+entity Location {
+	upsaId String,
+	name String
+}
+entity Title {
+	upsaId String required,
+	name String
+}
+entity JobFunction {
+	upsaId String required,
+	name String required,
+    prefix String
+}
+entity BillingConcept {
+	upsaId String required,
+	name String
+}
+entity OpportunityType {
+	name String required
+}
+entity ProjectCategory {
+	upsaId String required,
+	name String
+}
+entity BillingType {
+	upsaId String required,
+	name String
+}
+entity ProductionStatus{
+	name String required
+}
+entity LanguageLevel {
+	language String required,
+	speaking String,
+    writing String
+}
+entity ProbationStatus {
+	endDate ZonedDateTime,
+    status String
+}
+entity PrimarySkill {
+	upsaId String required,
+    name String required
+}
+entity Unit{
+	upsaId String required,
+    name String required
+}
+entity Employee{
+	upsaId String required,
+	email String required,
+    fullName String,
+	comment String maxlength(255),
+    managerFullName String,
+    managerId String,
+    active Boolean required,
+    hireDate ZonedDateTime,
+    availableFrom ZonedDateTime,
+    gender Gender
+}
+entity Project{
+	upsaId String required,
+    name String required,
+    startDate LocalDate,
+    endDate LocalDate,
+}
+entity ProjectRole{
+	upsaId String required,
+    name String
+}
+entity SkillCategory{
+	name String required,
+    color String
+}
+entity Opportunity{
+	staffingId String,
+    name String,
+    ownerUpsaId String,
+    ownerFullName String,
+    startDate LocalDate,
+    endDate LocalDate,
+    status OpportunityStatus,
+    description String maxlength(1000),
+    staffingCoordinatiorUpsaId String,
+    staffingCoordinatiorFullName String,
+    responsibleManagerUpsaId String,
+    responsibleManagerFullName String,
+    supervisorUpsaId String,
+    supervisorFullName String,
+    deliveryManagerUpsaId String,
+    deliveryManagerFullName String,
+    accountManagerUpsaId String,
+    accountManagerFullName String
+}
+entity OpportunityPosition{
+	createdTime LocalDate required,
+    employeeUpsaId String,
+    employeeFullName String,
+    ownerUpsaId String required,
+    ownerFullName String required,
+    status PositionStatus
+}
+entity ProjectHistory{
+	date LocalDate,
+    workload Integer required
+}
+entity Job{
+	code String,
+    enabled Boolean,
+    sendEmail Boolean,
+    email String,
+    lastStartTime LocalDate,
+    lastEndTime LocalDate,
+    lastResult JobResultStatus,
+    lastUser String
+}
+entity JobExecution {
+    startTime LocalDate,
+    endTime LocalDate,
+    result JobResultStatus,
+    user String
+}	
+enum Gender{
+ MALE, FEMALE
+}
+enum JobResultStatus{
+	SUCCESS, ERROR
+}
+enum PositionStatus{
+	CREATED, CLOSED, ASSIGNED, ON_HOLD, CANCELLED, IN_PROGRESS, APPROVED, OPEN, TERMINATED, BOOKED, REJECTED
+}
+enum OpportunityStatus{
+	CREATED, CLOSED, ACTIVE, ON_HOLD, CANCELLED, IN_PROGRESS, APPROVED, OPEN, DRAFT, SUBMITTED, REJECTED
+}
+relationship OneToOne{
+	PredictionDetails{project} to Project,
+    BenchPredictions{details} to PredictionDetails,
+    Unit{owner} to Employee
+}
+relationship ManyToOne{
+	BenchPredictions{employee} to Employee{predictions},
+    Unit{parent} to Unit{children},
+    JobExecution{job} to Job{executions}
+}
+relationship OneToOne{
+	ProjectHistory{role} to ProjectRole,
+    ProjectHistory{project} to Project
+}
+relationship ManyToOne{
+	BenchCommentHistory{employee} to Employee
+}
+relationship OneToOne{
+	BenchCommentHistory{user} to Employee
+}
+relationship OneToOne{
+	OpportunityPosition{role} to ProjectRole
+}
+relationship OneToMany{
+	Opportunity{assignedPositions} to OpportunityPosition,
+    Opportunity{location} to Location
+}
+relationship OneToMany{
+	SkillCategory{children} to PrimarySkill
+}
+relationship OneToOne {
+	Employee{probation} to ProbationStatus,
+    Employee{location} to Location,
+    Employee{primarySkill} to PrimarySkill,
+    Employee{title} to Title,
+    Employee{englishLevel} to LanguageLevel,
+    Employee{productionStatus} to ProductionStatus,
+    Employee{jobFunction} to JobFunction,
+    Employee{unit} to Unit
+}
+relationship OneToMany{
+    Employee{benchHistory} to BenchHistory{employee},
+    Employee{projectsWorkload} to ProjectHistory,
+    Employee{opportunityPosition} to OpportunityPosition{employee}
+}
+relationship OneToOne {
+	Project{billingConcept} to BillingConcept,
+    Project{billingType} to BillingType,
+    Project{category} to ProjectCategory
+}
+relationship OneToOne {
+	Opportunity{type} to OpportunityType
+}
+
+relationship OneToOne {
+	Unit{location} to Location,
+    Unit{skill} to PrimarySkill
+}
+
+// Set pagination options
+paginate * with infinite-scroll
+
+service all with serviceImpl

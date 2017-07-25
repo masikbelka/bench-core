@@ -1,0 +1,154 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "probation",
+            "otherEntityName": "probationStatus",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "employee"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "location",
+            "otherEntityName": "location",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "employee"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "primarySkill",
+            "otherEntityName": "primarySkill",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "employee"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "title",
+            "otherEntityName": "title",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "employee"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "englishLevel",
+            "otherEntityName": "languageLevel",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "employee"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "productionStatus",
+            "otherEntityName": "productionStatus",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "employee"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "jobFunction",
+            "otherEntityName": "jobFunction",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "employee"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "unit",
+            "otherEntityName": "unit",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "employee"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "benchHistory",
+            "otherEntityName": "benchHistory",
+            "otherEntityRelationshipName": "employee"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "projectsWorkload",
+            "otherEntityName": "projectHistory",
+            "otherEntityRelationshipName": "employee"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "opportunityPosition",
+            "otherEntityName": "opportunityPosition",
+            "otherEntityRelationshipName": "employee"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "predictions",
+            "otherEntityName": "benchPredictions",
+            "otherEntityRelationshipName": "employee"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "upsaId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fullName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "comment",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "managerFullName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "managerId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "hireDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "availableFrom",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "gender",
+            "fieldType": "Gender",
+            "fieldValues": "MALE,FEMALE"
+        }
+    ],
+    "changelogDate": "20170723144202",
+    "entityTableName": "employee",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl"
+}

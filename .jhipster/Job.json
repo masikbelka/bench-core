@@ -1,0 +1,51 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "executions",
+            "otherEntityName": "jobExecution",
+            "otherEntityRelationshipName": "job"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "enabled",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "sendEmail",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastStartTime",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "lastEndTime",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "lastResult",
+            "fieldType": "JobResultStatus",
+            "fieldValues": "SUCCESS,ERROR"
+        },
+        {
+            "fieldName": "lastUser",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170723144209",
+    "entityTableName": "job",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl"
+}

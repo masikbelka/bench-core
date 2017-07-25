@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "job",
+            "otherEntityName": "job",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "startTime",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "endTime",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "result",
+            "fieldType": "JobResultStatus",
+            "fieldValues": "SUCCESS,ERROR"
+        },
+        {
+            "fieldName": "user",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170723144210",
+    "entityTableName": "job_execution",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl"
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity BenchPredictions.
+    -->
+    <changeSet id="20170723144148-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="details_id"
+                                 baseTableName="bench_predictions"
+                                 constraintName="fk_bench_predictions_details_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="prediction_details"/>
+
+        <addForeignKeyConstraint baseColumnNames="employee_id"
+                                 baseTableName="bench_predictions"
+                                 constraintName="fk_bench_predictions_employee_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employee"/>
+
+    </changeSet>
+</databaseChangeLog>

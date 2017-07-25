@@ -1,0 +1,26 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "language",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "speaking",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "writing",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170723144158",
+    "entityTableName": "language_level",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl"
+}

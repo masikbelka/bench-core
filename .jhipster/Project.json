@@ -1,0 +1,58 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "billingConcept",
+            "otherEntityName": "billingConcept",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "project"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "billingType",
+            "otherEntityName": "billingType",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "project"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "category",
+            "otherEntityName": "projectCategory",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "project"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "upsaId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20170723144203",
+    "entityTableName": "project",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl"
+}

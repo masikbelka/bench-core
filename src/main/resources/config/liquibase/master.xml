@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144146_added_entity_BenchHistory.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144147_added_entity_BenchCommentHistory.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144148_added_entity_BenchPredictions.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144149_added_entity_PredictionDetails.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144150_added_entity_Location.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144151_added_entity_Title.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144152_added_entity_JobFunction.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144153_added_entity_BillingConcept.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144154_added_entity_OpportunityType.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144155_added_entity_ProjectCategory.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144156_added_entity_BillingType.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144157_added_entity_ProductionStatus.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144158_added_entity_LanguageLevel.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144159_added_entity_ProbationStatus.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144200_added_entity_PrimarySkill.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144201_added_entity_Unit.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144202_added_entity_Employee.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144203_added_entity_Project.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144204_added_entity_ProjectRole.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144205_added_entity_SkillCategory.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144206_added_entity_Opportunity.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144207_added_entity_OpportunityPosition.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144208_added_entity_ProjectHistory.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144209_added_entity_Job.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144210_added_entity_JobExecution.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20170723144146_added_entity_constraints_BenchHistory.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144147_added_entity_constraints_BenchCommentHistory.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144148_added_entity_constraints_BenchPredictions.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144149_added_entity_constraints_PredictionDetails.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144150_added_entity_constraints_Location.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144200_added_entity_constraints_PrimarySkill.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144201_added_entity_constraints_Unit.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144202_added_entity_constraints_Employee.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144203_added_entity_constraints_Project.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144206_added_entity_constraints_Opportunity.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144207_added_entity_constraints_OpportunityPosition.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144208_added_entity_constraints_ProjectHistory.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170723144210_added_entity_constraints_JobExecution.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

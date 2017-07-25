@@ -1,0 +1,66 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "opportunity",
+            "otherEntityName": "opportunity",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "role",
+            "otherEntityName": "projectRole",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "opportunityPosition"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "employee",
+            "otherEntityName": "employee",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "createdTime",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "employeeUpsaId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "employeeFullName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ownerUpsaId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "ownerFullName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "PositionStatus",
+            "fieldValues": "CREATED,CLOSED,ASSIGNED,ON_HOLD,CANCELLED,IN_PROGRESS,APPROVED,OPEN,TERMINATED,BOOKED,REJECTED"
+        }
+    ],
+    "changelogDate": "20170723144207",
+    "entityTableName": "opportunity_position",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl"
+}

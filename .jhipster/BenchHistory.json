@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "employee",
+            "otherEntityName": "employee",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "createdTime",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "bench",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "managerId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "validTo",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createdByUpsaId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "changedByUpsaId",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170723144146",
+    "entityTableName": "bench_history",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl"
+}
