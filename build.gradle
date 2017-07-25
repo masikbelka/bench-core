@@ -209,8 +209,8 @@ dependencies {
     compile "org.springframework.cloud:spring-cloud-starter-hystrix"
     compile "org.springframework.cloud:spring-cloud-starter-spectator"
     compile "org.springframework.retry:spring-retry"
-    compile "org.springframework.cloud:spring-cloud-starter-consul-discovery"
-    compile "org.springframework.cloud:spring-cloud-starter-consul-config"
+   // compile "org.springframework.cloud:spring-cloud-starter-consul-discovery"
+   // compile "org.springframework.cloud:spring-cloud-starter-consul-config"
     compile "org.springframework.cloud:spring-cloud-starter-feign"
     compile "org.springframework.boot:spring-boot-starter-cloud-connectors"
     compile ("org.springframework:spring-context-support")
